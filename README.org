@@ -25,6 +25,10 @@ Learn the awk programming language with help of Org mode and Org-drill.
   This is the needed Emacs config. All of the =org-babel-do-load-languages= is not needed,
   just =awk=.
 
+  To make new questions I use Org capture templates. They are easy to access via =C-c c
+  a=. But as the questions are just plain thay can easelly be written by hand. Just follow
+  the pattern.
+
   #+BEGIN_SRC shell :results output code
     awk 'NR==245,NR==256;NR==285,NR==286' ~/.emacs.d/packages.el
   #+END_SRC
@@ -54,8 +58,7 @@ Learn the awk programming language with help of Org mode and Org-drill.
   #+RESULTS:
   #+begin_src shell
   (setq org-capture-templates
-        '(
-          ("a" "awk drill question"
+        '(("a" "awk drill question"
            entry (file+headline "~/git/learn-awk/awk.org" "Drills")
-           "\n\n** %^{Question title}                           :awk:drill:\n\n   %^{Question body} \n\n*** Answer \n\n    #+BEGIN_SRC awk :results output code \n      %^{awk program}\n    #+END_SRC")))
+           "\n\n** %^{Question title}                           :awk:drill:\n\n   %^{Question body} \n\n*** Answer \n\n    #+BEGIN_SRC awk :results output code :in-file ./text-files/%^{text file}\n      %^{awk program}\n    #+END_SRC")))
   #+end_src
