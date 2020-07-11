@@ -10,7 +10,6 @@ Learn the awk programming language with help of Org mode and Org-drill.
   5. Write your answers in the note-book.org session.
      note-book.org contains templates for each text-file included
 
-
 * Remove personal Org-drill data from awk.org
 
   If you are using org-drill in awk.org. Org-drill adds some data to each of the
@@ -20,3 +19,43 @@ Learn the awk programming language with help of Org mode and Org-drill.
   #+BEGIN_SRC shell :results none
     mv awk.org{,.bak}&&cat *.bak|awk '$1~/^SCHEDULED/,$1~/^:END/{next};{print}'>awk.org&&rm -f *.bak
   #+END_SRC
+
+* Emacs setup
+
+  This is the needed Emacs config. All of the =org-babel-do-load-languages= is not needed,
+  just =awk=.
+
+  #+BEGIN_SRC shell :results output code
+    awk 'NR==245,NR==256;NR==285,NR==286' ~/.emacs.d/packages.el
+  #+END_SRC
+
+  #+RESULTS:
+  #+begin_src shell
+  (setq org-confirm-babel-evaluate nil)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (shell . t)
+     (scheme . t)
+     (python . t)
+     (awk . t)
+     (sed . t)
+     (ledger . t)
+     (clojure . t)))
+
+  (use-package org-drill
+    :pin melpa)
+  #+end_src
+
+  #+BEGIN_SRC shell :results output code
+    awk 'NR==36,NR==40' ~/.emacs.d/org.el
+  #+END_SRC
+
+  #+RESULTS:
+  #+begin_src shell
+  (setq org-capture-templates
+        '(
+          ("a" "awk drill question"
+           entry (file+headline "~/git/learn-awk/awk.org" "Drills")
+           "\n\n** %^{Question title}                           :awk:drill:\n\n   %^{Question body} \n\n*** Answer \n\n    #+BEGIN_SRC awk :results output code \n      %^{awk program}\n    #+END_SRC")))
+  #+end_src
