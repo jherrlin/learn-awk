@@ -1,13 +1,17 @@
 
-Learn the awk programming language with help of Org mode and Org-drill.
+Learn the awk programming language in a fun and interactive way with help of Org mode and
+Org-drill.
 
 * Workflow
 
   1. Open 2 Emacs sessions
-  2. Open awk.org in on session
+  2. Open awk.org in one session
   3. Open note-book.org in the other
   4. Start org-drill in the awk.org session
   5. Write your answers in the note-book.org session
+
+  note-book.org contains org mode awk source blocks for each of the files in =text-files=.
+  When questions refers to files, use that specific source block when writing the answer.
 
 * Emacs setup
 

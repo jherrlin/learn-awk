@@ -1,3 +1,5 @@
+#+STARTUP: showeverything
+
 * Drills
 ** Local variables                                                :awk:drill:
 
@@ -20,15 +22,19 @@
 
    How do you get the current file name?
 
+   :in-file ./text-files/access.log
+
 *** Answer
 
-    #+BEGIN_SRC awk :results output code :in-file ./awk.org
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
       END { print FILENAME }
     #+END_SRC
 
 ** Current file row number                                        :awk:drill:
 
    How to get the current file row number?
+
+   :in-file ./text-files/access.log
 
 *** Answer
 
@@ -41,6 +47,8 @@
 ** Number of fields in record                                     :awk:drill:
 
    How to get the number of fields in the current record?
+
+   :in-file ./text-files/access.log
 
 *** Answer
 
@@ -56,6 +64,8 @@
 
    What is the internal variable used to tell how many records have been read?
 
+   :in-file ./text-files/access.log
+
 *** Answer
 
     #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
@@ -64,7 +74,9 @@
 
 ** Empty line pattern                                             :awk:drill:
 
-   How to skip empty lines
+   How to skip empty lines?
+
+   :in-file ./text-files/ledger.ledger
 
 *** Answer
 
@@ -75,6 +87,8 @@
 ** Print line 7 to 10 of file                                     :awk:drill:
 
    How do you print line 7 to 10 with a range pattern?
+
+   :in-file ./text-files/ledger.ledger
 
 *** Answer
 
@@ -94,6 +108,8 @@
 
    How do you skip a line that starts with a number?
 
+   :in-file ./text-files/ledger.ledger
+
 *** Answer
 
     #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
@@ -104,6 +120,8 @@
 ** How many requests have each IP address done                    :awk:drill:
 
    Count the number of requests that each unique IP address have done.
+
+   :in-file ./text-files/access.log
 
 *** Answer
 
