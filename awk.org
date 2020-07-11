@@ -1,17 +1,5 @@
 * Drills
 ** Local variables                                                :awk:drill:
-   SCHEDULED: <2020-07-15 Wed>
-   :PROPERTIES:
-   :ID:       3b3765fd-fc64-419a-bb25-3ec447ba22b6
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
-   :END:
 
    How to declair local variables in a function?
 
@@ -37,18 +25,6 @@
    #+end_src
 
 ** Current filename                                               :awk:drill:
-   SCHEDULED: <2020-07-15 Wed>
-   :PROPERTIES:
-   :ID:       a2cd97e2-7329-4e18-a910-efd035e9f315
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
-   :END:
 
    How do you get the current file name?
 
@@ -64,18 +40,6 @@
     #+end_src
 
 ** Current file row number                                        :awk:drill:
-   SCHEDULED: <2020-07-15 Wed>
-   :PROPERTIES:
-   :ID:       7537dfd5-20d6-436c-ae80-e218f78db679
-   :DRILL_LAST_INTERVAL: 3.86
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 3.0
-   :DRILL_EASE: 2.36
-   :DRILL_LAST_QUALITY: 3
-   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
-   :END:
 
    How to get the current file row number?
 
@@ -97,18 +61,6 @@
     #+end_src
 
 ** Number of fields in record                                     :awk:drill:
-   SCHEDULED: <2020-07-15 Wed>
-   :PROPERTIES:
-   :ID:       36d009f2-226b-43a7-aa5c-1a207d12f504
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
-   :END:
 
    How to get the number of fields in the current record?
 
@@ -123,18 +75,6 @@
     #+END_SRC
 
 ** Read records variable                                          :awk:drill:
-   SCHEDULED: <2020-07-15 Wed>
-   :PROPERTIES:
-   :ID:       5ead74b0-1336-4dfe-a6a7-343ce4b34594
-   :DRILL_LAST_INTERVAL: 4.0
-   :DRILL_REPEATS_SINCE_FAIL: 2
-   :DRILL_TOTAL_REPEATS: 1
-   :DRILL_FAILURE_COUNT: 0
-   :DRILL_AVERAGE_QUALITY: 4.0
-   :DRILL_EASE: 2.5
-   :DRILL_LAST_QUALITY: 4
-   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
-   :END:
 
    What is the internal variable used to tell how many records have been read?
 
