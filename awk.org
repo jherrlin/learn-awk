@@ -16,14 +16,6 @@
      END { f(); g() }
    #+END_SRC
 
-   #+RESULTS:
-   #+begin_src awk
-   bar's i=0
-   bar's i=1
-   bar's i=2
-
-   #+end_src
-
 ** Current filename                                               :awk:drill:
 
    How do you get the current file name?
@@ -33,11 +25,6 @@
     #+BEGIN_SRC awk :results output code :in-file ./awk.org
       END { print FILENAME }
     #+END_SRC
-
-    #+RESULTS:
-    #+begin_src awk
-    ./awk.org
-    #+end_src
 
 ** Current file row number                                        :awk:drill:
 
@@ -50,15 +37,6 @@
     #+BEGIN_SRC awk :results output code :in-file ./awk.org
       FNR==1,FNR==5
     #+END_SRC
-
-    #+RESULTS:
-    #+begin_src awk
-    ,* Drills
-    ,** Text
-
-      ,#+NAME: ledger-text
-      ,#+BEGIN_EXAMPLE
-    #+end_src
 
 ** Number of fields in record                                     :awk:drill:
 
