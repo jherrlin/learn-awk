@@ -12,6 +12,7 @@ Org-drill.
 
   note-book.org contains org mode awk source blocks for each of the files in =text-files=.
   When questions refers to files, use that specific source block when writing the answer.
+  You can then use =C-c C-c= to interactively develop your answer.
 
 * Emacs setup
 
@@ -19,8 +20,8 @@ Org-drill.
   just =awk=.
 
   To make new questions I use Org capture templates. They are easy to access via =C-c c
-  a=. But as the questions are just plain thay can easelly be written by hand. Just follow
-  the pattern.
+  a=. But as the questions are just plain text they can easily be written by hand. Just
+  follow the pattern.
 
   #+BEGIN_SRC shell :results output code :exports both
     awk 'NR==245,NR==256;NR==285,NR==286' ~/.emacs.d/packages.el
