@@ -11,8 +11,12 @@ Learn the awk programming language with help of Org mode and Org-drill.
      note-book.org contains templates for each text-file included
 
 
+* Remove personal Org-drill data from awk.org
 
-#+BEGIN_SRC awk :results output code :in-file awk.org
-  $1 ~ /^SCHEDULED/,$1 ~ /^:END/ { next }
-                                 { print }
-#+END_SRC
+  If you are using org-drill in awk.org. Org-drill adds some data to each of the
+  headlines. This is your personal data and should not be version controlled. Run this to
+  remove the personal org-drill data.
+
+  #+BEGIN_SRC shell :results output code
+    mv awk.org{,.bak} && cat *.bak | awk '$1 ~ /^SCHEDULED/,$1 ~ /^:END/ { next }; { print }' > awk.org && rm -f *.bak
+  #+END_SRC
