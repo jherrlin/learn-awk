@@ -1,0 +1,176 @@
+* Drills
+** Local variables                                                :awk:drill:
+   SCHEDULED: <2020-07-15 Wed>
+   :PROPERTIES:
+   :ID:       3b3765fd-fc64-419a-bb25-3ec447ba22b6
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
+   :END:
+
+   How to declair local variables in a function?
+
+*** Answer
+
+    Variable i is only local
+
+   #+BEGIN_SRC awk :results output code
+     function f(      i){
+         for (i = 0; i < 3; i++)
+             print "bar's i=" i
+     }
+     function g(      i) { print i }
+     END { f(); g() }
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_src awk
+   bar's i=0
+   bar's i=1
+   bar's i=2
+
+   #+end_src
+
+** Current filename                                               :awk:drill:
+   SCHEDULED: <2020-07-15 Wed>
+   :PROPERTIES:
+   :ID:       a2cd97e2-7329-4e18-a910-efd035e9f315
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
+   :END:
+
+   How do you get the current file name?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./awk.org
+      END { print FILENAME }
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    ./awk.org
+    #+end_src
+
+** Current file row number                                        :awk:drill:
+   SCHEDULED: <2020-07-15 Wed>
+   :PROPERTIES:
+   :ID:       7537dfd5-20d6-436c-ae80-e218f78db679
+   :DRILL_LAST_INTERVAL: 3.86
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 3.0
+   :DRILL_EASE: 2.36
+   :DRILL_LAST_QUALITY: 3
+   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
+   :END:
+
+   How to get the current file row number?
+
+*** Answer
+
+    Prints file row 1 to 5. FNR is the record number in current file.
+
+    #+BEGIN_SRC awk :results output code :in-file ./awk.org
+      FNR==1,FNR==5
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    ,* Drills
+    ,** Text
+
+      ,#+NAME: ledger-text
+      ,#+BEGIN_EXAMPLE
+    #+end_src
+
+** Number of fields in record                                     :awk:drill:
+   SCHEDULED: <2020-07-15 Wed>
+   :PROPERTIES:
+   :ID:       36d009f2-226b-43a7-aa5c-1a207d12f504
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
+   :END:
+
+   How to get the number of fields in the current record?
+
+*** Answer
+
+    NF is the variable.
+
+    Example; print number of fields on each record.
+
+    #+BEGIN_SRC awk :results output code :stdin ledger-text
+      { print NF }
+    #+END_SRC
+
+** Read records variable                                          :awk:drill:
+   SCHEDULED: <2020-07-15 Wed>
+   :PROPERTIES:
+   :ID:       5ead74b0-1336-4dfe-a6a7-343ce4b34594
+   :DRILL_LAST_INTERVAL: 4.0
+   :DRILL_REPEATS_SINCE_FAIL: 2
+   :DRILL_TOTAL_REPEATS: 1
+   :DRILL_FAILURE_COUNT: 0
+   :DRILL_AVERAGE_QUALITY: 4.0
+   :DRILL_EASE: 2.5
+   :DRILL_LAST_QUALITY: 4
+   :DRILL_LAST_REVIEWED: [2020-07-11 Sat 22:42]
+   :END:
+
+   What is the internal variable used to tell how many records have been read?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :stdin ledger-text
+      { print NR }
+    #+END_SRC
+
+** Empty line pattern                                             :awk:drill:
+
+   How to skip empty lines
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :stdin ledger-text
+      NF { print }
+    #+END_SRC
+
+** Print line 5 to 10 of file                                     :awk:drill:
+
+   How do you print line 5 to 10 with a range pattern?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :stdin ledger-text
+      FNR==5,FNR==10 { print FNR, $0 }
+    #+END_SRC
+
+** Skip lines starting with number                                :awk:drill:
+
+   How do you skip a line that starts with a number?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :stdin ledger-text
+      $0 ~ /^[0-9]/ { next }
+                    { print }
+    #+END_SRC

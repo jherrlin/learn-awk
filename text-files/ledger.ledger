@@ -1,0 +1,32 @@
+2020-04-17 * Dustin. Köp av tangentbord.
+    ;; ~/company/incomming-invoices/2020/2020-04-17-lenovo-keyboard-invoice.pdf
+    2:4:4:0                                  -667.00 SEK
+    2:6:4:1                                   133.40 SEK
+    5:4:0:0                                   533.60 SEK
+
+2020-04-17 * Dustin. Köp av tangentbord.
+    ;; ~/company/incomming-invoices/2020/2020-04-17-lenovo-keyboard-swedbank-transaction.pdf
+    2:4:4:0                                   667.00 SEK
+    2:0:1:8                                  -667.00 SEK
+
+2020-04-25 * Loopia. Faktura för domän namn.
+    ;; ~/company/incomming-invoices/2020/2020-04-25-loopia-domain-name-invoice.pdf
+    2:4:4:0                                  -139.00 SEK
+    2:6:4:1                                    27.80 SEK
+    6:2:3:0                                   111.20 SEK
+
+2020-04-26 * Loopia. Faktura för domän namn betald.
+    ;; ~/company/incomming-invoices/2020/2020-04-26-loopia-domain-name-swedbank-transaction.pdf
+    2:4:4:0                                   139.00 SEK
+    2:0:1:8                                  -139.00 SEK
+
+2020-05-26 * Lenovo. Beställning av T490s.
+    ;; ~/company/incomming-invoices/2020/2020-05-26-lenovo-thinkpad-invoice.pdf
+    2:4:4:0                                -19110.60 SEK
+    2:6:4:1                                  3822.12 SEK
+    5:4:0:0                                 15288.48 SEK
+
+2020-06-09 * Lenovo. Faktura betald för T490s.
+    ;; ~/company/incomming-invoices/2020/2020-06-09-lenovo-thinkpad-swedbank-transaction.pdf
+    2:4:4:0                                 19110.60 SEK
+    2:0:1:8                                -19110.60 SEK
