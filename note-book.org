@@ -8,3 +8,7 @@
 #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
   { print }
 #+END_SRC
+
+#+BEGIN_SRC awk :results output code :in-file ./text-files/countries.txt
+  { print }
+#+END_SRC
