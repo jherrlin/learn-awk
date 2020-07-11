@@ -9,16 +9,6 @@ Learn the awk programming language with help of Org mode and Org-drill.
   4. Start org-drill in the awk.org session
   5. Write your answers in the note-book.org session
 
-* Remove personal Org-drill data from awk.org
-
-  If you are using org-drill in awk.org. Org-drill adds some data to each of the
-  headlines. This is your personal data and should not be version controlled. Run this to
-  remove the personal org-drill data.
-
-  #+BEGIN_SRC shell :results none
-    mv awk.org{,.bak}&&cat *.bak|awk '$1~/^SCHEDULED/,$1~/^:END/{next};{print}'>awk.org&&rm -f *.bak
-  #+END_SRC
-
 * Emacs setup
 
   This is the needed Emacs config. All of the =org-babel-do-load-languages= is not needed,
@@ -61,3 +51,13 @@ Learn the awk programming language with help of Org mode and Org-drill.
            entry (file+headline "~/git/learn-awk/awk.org" "Drills")
            "\n\n** %^{Question title}                           :awk:drill:\n\n   %^{Question body} \n\n*** Answer \n\n    #+BEGIN_SRC awk :results output code :in-file ./text-files/%^{text file}\n      %^{awk program}\n    #+END_SRC")))
   #+end_src
+
+* Remove personal Org-drill data from awk.org
+
+  If you are using org-drill in awk.org. Org-drill adds some data to each of the
+  headlines. This is your personal data and should not be version controlled. Run this to
+  remove the personal org-drill data.
+
+  #+BEGIN_SRC shell :results none
+    mv awk.org{,.bak}&&cat *.bak|awk '$1~/^SCHEDULED/,$1~/^:END/{next};{print}'>awk.org&&rm -f *.bak
+  #+END_SRC
