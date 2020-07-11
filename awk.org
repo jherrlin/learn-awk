@@ -5,7 +5,7 @@
 
 *** Answer
 
-    Variable i is only local
+    Local variables are declaired in the function arguments.
 
    #+BEGIN_SRC awk :results output code
      function f(      i){
@@ -34,7 +34,7 @@
 
     Prints file row 1 to 5. FNR is the record number in current file.
 
-    #+BEGIN_SRC awk :results output code :in-file ./awk.org
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
       FNR==1,FNR==5
     #+END_SRC
 
@@ -48,7 +48,7 @@
 
     Example; print number of fields on each record.
 
-    #+BEGIN_SRC awk :results output code :stdin ledger-text
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
       { print NF }
     #+END_SRC
 
@@ -58,7 +58,7 @@
 
 *** Answer
 
-    #+BEGIN_SRC awk :results output code :stdin ledger-text
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
       { print NR }
     #+END_SRC
 
@@ -68,19 +68,27 @@
 
 *** Answer
 
-    #+BEGIN_SRC awk :results output code :stdin ledger-text
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
       NF { print }
     #+END_SRC
 
-** Print line 5 to 10 of file                                     :awk:drill:
+** Print line 7 to 10 of file                                     :awk:drill:
 
-   How do you print line 5 to 10 with a range pattern?
+   How do you print line 7 to 10 with a range pattern?
 
 *** Answer
 
-    #+BEGIN_SRC awk :results output code :stdin ledger-text
-      FNR==5,FNR==10 { print FNR, $0 }
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
+      FNR==7,FNR==10
     #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    2020-04-17 * Dustin. Köp av tangentbord.
+        ;; ~/company/incomming-invoices/2020/2020-04-17-lenovo-keyboard-swedbank-transaction.pdf
+        2:4:4:0                                   667.00 SEK
+        2:0:1:8                                  -667.00 SEK
+    #+end_src
 
 ** Skip lines starting with number                                :awk:drill:
 
@@ -88,7 +96,20 @@
 
 *** Answer
 
-    #+BEGIN_SRC awk :results output code :stdin ledger-text
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
       $0 ~ /^[0-9]/ { next }
                     { print }
+    #+END_SRC
+
+** How many requests have each IP address done                    :awk:drill:
+
+   Count the number of requests that each unique IP address have done.
+
+*** Answer
+
+    The answer also contains some sorting.
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
+      { counts[$1]+= 1}
+      END { for (c in counts) { print c, counts[c] | "sort -r -k 2,2" }}
     #+END_SRC
