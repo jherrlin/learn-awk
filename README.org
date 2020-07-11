@@ -28,7 +28,7 @@ Learn the awk programming language with help of Org mode and Org-drill.
   a=. But as the questions are just plain thay can easelly be written by hand. Just follow
   the pattern.
 
-  #+BEGIN_SRC shell :results output code
+  #+BEGIN_SRC shell :results output code :exports both
     awk 'NR==245,NR==256;NR==285,NR==286' ~/.emacs.d/packages.el
   #+END_SRC
 
@@ -50,7 +50,7 @@ Learn the awk programming language with help of Org mode and Org-drill.
     :pin melpa)
   #+end_src
 
-  #+BEGIN_SRC shell :results output code
+  #+BEGIN_SRC shell :results output code :exports both
     awk 'NR==36,NR==40' ~/.emacs.d/org.el
   #+END_SRC
 
