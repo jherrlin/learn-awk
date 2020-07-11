@@ -1,0 +1,18 @@
+
+Learn the awk programming language with help of Org mode and Org-drill.
+
+* Workflow
+
+  1. Open 2 Emacs sessions
+  2. Open awk.org in on session
+  3. Open note-book.org in the other
+  4. Start org-drill in the awk.org session.
+  5. Write your answers in the note-book.org session.
+     note-book.org contains templates for each text-file included
+
+
+
+#+BEGIN_SRC awk :results output code :in-file awk.org
+  $1 ~ /^SCHEDULED/,$1 ~ /^:END/ { next }
+                                 { print }
+#+END_SRC
