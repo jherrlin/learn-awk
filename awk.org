@@ -172,3 +172,53 @@
       BEGIN {FS=":"; OFS="|"}
             { print $1, $2, $3, $4, $5, $6, $7}
     #+END_SRC
+
+** Zero or more regex                           :awk:drill:
+
+   What is the regex symbol for zero or more?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      *
+    #+END_SRC
+
+** One or more regex                                              :awk:drill:
+
+   What is the regex symbol for one or more?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      +
+    #+END_SRC
+
+** Zero or one regex                                              :awk:drill:
+
+   What is the regex symbol for zero or one?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      ?
+    #+END_SRC
+
+** Beginning of line regex                                        :awk:drill:
+
+   What is the regex symbol for beginning of line?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      ^
+    #+END_SRC
+
+** End of line regex                                              :awk:drill:
+
+   What is the regex symbol for end of line?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      $
+    #+END_SRC
