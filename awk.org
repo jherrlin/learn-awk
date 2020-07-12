@@ -129,3 +129,33 @@
       { counts[$1]+= 1}
       END { for (c in counts) { print c, counts[c] | "sort -r -k 2,2" }}
     #+END_SRC
+
+** For loop                                                       :awk:drill:
+
+   Write a for loop that print value 1 to 10
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      END { for (i=1; i <= 10; i++) { print i }}
+    #+END_SRC
+
+** The Structure of an AWK Program                                :awk:drill:
+
+   Name the two most basic parts of an awk program.
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code
+      pattern { action }
+    #+END_SRC
+
+** First fields equals to                                         :awk:drill:
+
+   How to filter rows where first field is "129.204.106.181"?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
+      $1=="129.204.106.181" { print }
+    #+END_SRC
