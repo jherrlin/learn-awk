@@ -1,4 +1,4 @@
-#+STARTUP: showeverything
+#+STARTUP: content
 
 * Drills
 ** Local variables                                                :awk:drill:
@@ -38,10 +38,8 @@
 
 *** Answer
 
-    Prints file row 1 to 5. FNR is the record number in current file.
-
     #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
-      FNR==1,FNR==5
+      { print FNR }
     #+END_SRC
 
 ** Number of fields in record                                     :awk:drill:
