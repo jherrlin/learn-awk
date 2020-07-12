@@ -159,3 +159,16 @@
     #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
       $1=="129.204.106.181" { print }
     #+END_SRC
+
+** Replace : with |
+
+   How do you replace all : with | in passwd file
+
+   :in-file ./text-files/passwd
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/passwd
+      BEGIN {FS=":"; OFS="|"}
+            { print $1, $2, $3, $4, $5, $6, $7}
+    #+END_SRC
