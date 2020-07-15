@@ -2,6 +2,8 @@
 Learn the awk programming language in a fun and interactive way with help of Org mode and
 Org-drill.
 
+[[./learn-awk.gif]]
+
 * Workflow
 
   1. Open 2 Emacs sessions
