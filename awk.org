@@ -111,8 +111,7 @@
 *** Answer
 
     #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
-      $0 ~ /^[0-9]/ { next }
-                    { print }
+      $0 ~ /^[^0-9]/
     #+END_SRC
 
 ** How many requests have each IP address done                    :awk:drill:
@@ -154,10 +153,12 @@
 
    How to filter rows where first field is "129.204.106.181"?
 
+   :in-file ./text-files/access.log
+
 *** Answer
 
     #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
-      $1=="129.204.106.181" { print }
+      $1=="129.204.106.181"
     #+END_SRC
 
 ** Replace : with |
