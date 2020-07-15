@@ -66,5 +66,5 @@ Org-drill.
   remove the personal org-drill data.
 
   #+BEGIN_SRC shell :results none
-    mv awk.org{,.bak}&&cat *.bak|awk '$1~/^SCHEDULED/,$1~/^:END/{next};{print}'>awk.org&&rm -f *.bak
+    mv awk.org{,.bak}&&cat *.bak|awk '$1~/^SCHEDULED/,$1~/^:END/{next};$1~/^:PROPERTIES/,$1~/^:END/{next};{print}'>awk.org&&rm -f *.bak
   #+END_SRC
