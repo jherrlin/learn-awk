@@ -79,7 +79,7 @@
 *** Answer
 
     #+BEGIN_SRC awk :results output code :in-file ./text-files/ledger.ledger
-      NF { print }
+      NF
     #+END_SRC
 
 ** Print line 7 to 10 of file                                     :awk:drill:
@@ -161,7 +161,7 @@
       $1=="129.204.106.181"
     #+END_SRC
 
-** Replace : with |
+** Replace : with |                                               :awk:drill:
 
    How do you replace all : with | in passwd file
 
@@ -174,7 +174,7 @@
             { print $1, $2, $3, $4, $5, $6, $7}
     #+END_SRC
 
-** Zero or more regex                           :awk:drill:
+** Zero or more regex                                             :awk:drill:
 
    What is the regex symbol for zero or more?
 
@@ -222,4 +222,14 @@
 
     #+BEGIN_SRC awk :results output code
       $
+    #+END_SRC
+** Comments                                                       :awk:drill:
+
+   How do you declair comments?
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/access.log
+      # This line is a comments
+      { print }   # From here to end of line is a comment
     #+END_SRC
