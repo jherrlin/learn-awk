@@ -1,6 +1,6 @@
 
-Learn the awk programming language in a fun and interactive way with help of Org mode and
-Org-drill.
+Learn the AWK programming language in a fun and interactive way with help of Emacs Org
+mode and Org-drill.
 
 [[./learn-awk.gif]]
 
@@ -14,7 +14,7 @@ Org-drill.
 
   note-book.org contains org mode awk source blocks for each of the files in =text-files=.
   When questions refers to files, use that specific source block when writing the answer.
-  You can then use =C-c C-c= to interactively develop your answer.
+  You can then use =C-c C-c= to interactively execute the code and get instant feedback.
 
 * Emacs setup
 
@@ -25,7 +25,7 @@ Org-drill.
   a=. But as the questions are just plain text they can easily be written by hand. Just
   follow the pattern.
 
-  #+BEGIN_SRC shell :results output code :exports both
+  #+BEGIN_SRC shell :results output code :exports results
     awk 'NR==245,NR==256;NR==285,NR==286' ~/.emacs.d/packages.el
   #+END_SRC
 
@@ -47,7 +47,7 @@ Org-drill.
     :pin melpa)
   #+end_src
 
-  #+BEGIN_SRC shell :results output code :exports both
+  #+BEGIN_SRC shell :results output code :exports results
     awk 'NR==36,NR==40' ~/.emacs.d/org.el
   #+END_SRC
 
