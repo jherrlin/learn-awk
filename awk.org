@@ -284,3 +284,21 @@
     #+begin_src awk
     abc
     #+end_src
+
+** Sum population in Europe                                       :awk:drill:
+
+   Sum the population in Europe. Population is in field $3.
+
+   :in-file ./text-files/countries.txt
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/countries.txt
+      $4 ~ /Europe/ { sum+= $3 }
+      END { print "Population in Europe is", sum}
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    Population in Europe is 172
+    #+end_src
