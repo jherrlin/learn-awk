@@ -272,7 +272,7 @@
 
 ** Substring                                                      :awk:drill:
 
-   How to print "abc" in string "abcdef"
+   How to print "abc" in string "abcdef" using =substr=.
 
 *** Answer
 
