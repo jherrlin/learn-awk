@@ -19,3 +19,7 @@
 #+BEGIN_SRC awk :results output code :in-file ./text-files/certificates
   { print }
 #+END_SRC
+
+#+BEGIN_SRC awk :results output code :in-file ./text-files/trailing
+  { print }
+#+END_SRC
