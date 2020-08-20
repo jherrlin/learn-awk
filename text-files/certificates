@@ -1,0 +1,17 @@
+this is some text with certificates
+
+-----BEGIN CERTIFICATE-----
+cert AAAAAAAAAAAAAAAA cert
+-----END CERTIFICATE-----
+
+echo chamber
+-----BEGIN CERTIFICATE-----
+cert BBBBBBBBBBBBBBBB cert
+-----END CERTIFICATE-----
+
+lorem ipsum
+1234
+-----BEGIN CERTIFICATE-----
+cert CCCCCCCCCCCCCCCC cert
+-----END CERTIFICATE-----
+asd asd asd

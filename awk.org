@@ -302,3 +302,43 @@
     #+begin_src awk
     Population in Europe is 172
     #+end_src
+** Multiple occurences                                            :awk:drill:
+
+   How do you get the SECOND certificate?
+
+   :in-file ./text-files/certificates
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/certificates
+      /BEGIN CERTIFICATE/ && ++c==2,/END CERTIFICATE/
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    -----BEGIN CERTIFICATE-----
+    cert BBBBBBBBBBBBBBBB cert
+    -----END CERTIFICATE-----
+    #+end_src
+
+** Multiple occurences 2                                          :awk:drill:
+
+   How do you get the SECOND and THIRD certificate?
+
+   :in-file ./text-files/certificates
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/certificates
+      /BEGIN CERTIFICATE/ && (++c==2 || c==3),/END CERTIFICATE/
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+    -----BEGIN CERTIFICATE-----
+    cert BBBBBBBBBBBBBBBB cert
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    cert CCCCCCCCCCCCCCCC cert
+    -----END CERTIFICATE-----
+    #+end_src
