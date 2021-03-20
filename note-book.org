@@ -23,3 +23,7 @@
 #+BEGIN_SRC awk :results output code :in-file ./text-files/trailing
   { print }
 #+END_SRC
+
+#+BEGIN_SRC awk :results output code :in-file ./text-files/text.yml
+  { print }
+#+END_SRC

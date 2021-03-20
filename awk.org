@@ -342,3 +342,67 @@
     cert CCCCCCCCCCCCCCCC cert
     -----END CERTIFICATE-----
     #+end_src
+
+** Ranges                                                         :awk:drill:
+
+   Print only the parameters to the Java commands and nothing more.
+
+   :in-file ./text-files/text.yml
+
+*** Answer
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/text.yml
+      $0 ~ /.*-\sjava/,$0 ~ /.*config/
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+          - java
+          - -Xmx1000m
+          - -Xss256k
+          - -XX:MaxMetaspaceSize=100m
+          - -XX:MaxDirectMemorySize=800m
+          - -XX:CompressedClassSpaceSize=20m
+          - -XX:ReservedCodeCacheSize=20m
+          - -XX:OnOutOfMemoryError=echo jvm-oom-selfkill; kill 1;
+          - -XX:MinHeapFreeRatio=50
+          - -XX:MaxHeapFreeRatio=50
+          - -XX:+HeapDumpOnOutOfMemoryError
+          - -XX:-ShrinkHeapInSteps
+          - -XX:MaxGCPauseMillis=10
+          - -Dio.netty.allocator.numHeapArenas=2
+          - -Dio.netty.allocator.numDirectArenas=2
+          - -jar
+          - app.jar
+          - db-migrate-run
+          - config.yml
+    #+end_src
+
+    #+BEGIN_SRC awk :results output code :in-file ./text-files/text.yml
+      $0 ~ /command:/,$1 ~ /^[a-z]/ && ++c==2
+    #+END_SRC
+
+    #+RESULTS:
+    #+begin_src awk
+        command:
+          - java
+          - -Xmx1000m
+          - -Xss256k
+          - -XX:MaxMetaspaceSize=100m
+          - -XX:MaxDirectMemorySize=800m
+          - -XX:CompressedClassSpaceSize=20m
+          - -XX:ReservedCodeCacheSize=20m
+          - -XX:OnOutOfMemoryError=echo jvm-oom-selfkill; kill 1;
+          - -XX:MinHeapFreeRatio=50
+          - -XX:MaxHeapFreeRatio=50
+          - -XX:+HeapDumpOnOutOfMemoryError
+          - -XX:-ShrinkHeapInSteps
+          - -XX:MaxGCPauseMillis=10
+          - -Dio.netty.allocator.numHeapArenas=2
+          - -Dio.netty.allocator.numDirectArenas=2
+          - -jar
+          - app.jar
+          - db-migrate-run
+          - config.yml
+        readinessProbe:
+    #+end_src

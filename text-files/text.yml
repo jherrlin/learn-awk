@@ -1,0 +1,31 @@
+spec:
+  containers:
+  - name: the-service
+    imagePullPolicy: Always
+    command:
+      - java
+      - -Xmx1000m
+      - -Xss256k
+      - -XX:MaxMetaspaceSize=100m
+      - -XX:MaxDirectMemorySize=800m
+      - -XX:CompressedClassSpaceSize=20m
+      - -XX:ReservedCodeCacheSize=20m
+      - -XX:OnOutOfMemoryError=echo jvm-oom-selfkill; kill 1;
+      - -XX:MinHeapFreeRatio=50
+      - -XX:MaxHeapFreeRatio=50
+      - -XX:+HeapDumpOnOutOfMemoryError
+      - -XX:-ShrinkHeapInSteps
+      - -XX:MaxGCPauseMillis=10
+      - -Dio.netty.allocator.numHeapArenas=2
+      - -Dio.netty.allocator.numDirectArenas=2
+      - -jar
+      - app.jar
+      - db-migrate-run
+      - config.yml
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+        scheme: HTTP
+      initialDelaySeconds: 10
+      timeoutSeconds: 5
