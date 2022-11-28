@@ -406,3 +406,13 @@
           - config.yml
         readinessProbe:
     #+end_src
+
+** Field separator                                                :awk:drill:
+
+   How do you change the field separator when invoking =awk=?
+
+*** Answer
+
+    #+BEGIN_SRC shell
+      awk -F',' '{ print $1 }'
+    #+END_SRC
