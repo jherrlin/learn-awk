@@ -416,3 +416,26 @@
     #+BEGIN_SRC shell
       awk -F',' '{ print $1 }'
     #+END_SRC
+
+** Last occurrence
+
+   #+NAME: last-occurrence
+   #+BEGIN_EXAMPLE
+      wlp0s20f3  /  monthly
+
+             month        rx      |     tx      |    total    |   avg. rate
+          ------------------------+-------------+-------------+---------------
+            2023-04     10,50 GiB |    2,02 GiB |   12,53 GiB |   41,51 kbit/s
+            2023-05      8,15 GiB |    1,76 GiB |    9,91 GiB |   86,03 kbit/s
+          ------------------------+-------------+-------------+---------------
+          estimated     22,05 GiB |    4,77 GiB |   26,82 GiB |
+   #+END_EXAMPLE
+
+   #+BEGIN_SRC awk :results output code :stdin last-occurrence
+     $1 ~ /^20/ {last=$0} END { print last }
+   #+END_SRC
+
+   #+RESULTS:
+   #+begin_src awk
+         2023-05      8,15 GiB |    1,76 GiB |    9,91 GiB |   86,03 kbit/s
+   #+end_src
